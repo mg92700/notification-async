@@ -60,7 +60,7 @@
                     <archive>
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            <mainClass>org.notification.NotificationAsync</mainClass>
+                            <mainClass>org.notification.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
