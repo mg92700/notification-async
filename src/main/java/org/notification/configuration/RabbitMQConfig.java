@@ -1,6 +1,7 @@
 package org.notification.configuration;
 
 
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,6 +22,11 @@ public class RabbitMQConfig {
 
     @Value("${spring.rabbitmq.password}")
     private String rabbitPassword;
+
+    @Bean
+    public Queue emailAlertQueue() {
+        return new Queue("alerte-email", true);
+    }
 
     @Bean
     public ConnectionFactory connectionFactory() {
