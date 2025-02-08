@@ -1,15 +1,20 @@
 package org.notification.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
-@Component
-public class EmailAlertListener {
 
+@Component
+public class EventAlertListener {
+
+    private static final Logger logger = LoggerFactory.getLogger(EventAlertListener.class);
     public static final String QUEUE_NAME = "alerte-email";
+
 
     @RabbitListener(queues = QUEUE_NAME)
     public void listen(String message) {
-        System.out.println("Received message: " + message);
-        // Traitement du message
+        logger.info("Received message: {}", message);
+
     }
 }

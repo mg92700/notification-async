@@ -7,3 +7,18 @@ spring:
     port: ${RABBITMQ_PORT:5672}
     username: ${RABBITMQ_USERNAME:guest}
     password: ${RABBITMQ_PASSWORD:guest}
+  mail:
+    host: ${MAIL_HOST:smtp-mail.outlook.com}
+    username: ${MAIL_USERNAME:default_username}
+    password: ${MAIL_PASSWORD:default_password}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_SMTP_AUTH:true}
+          starttls:
+            enable: ${MAIL_SMTP_STARTTLS_ENABLE:true}
+          connecttimeout: ${MAIL_SMTP_CONNECT_TIMEOUT:5000}
+          timeout: ${MAIL_SMTP_TIMEOUT:3000}
+          writetimeout: ${MAIL_SMTP_WRITE_TIMEOUT:5000}
+        store:
+          protocol: ${MAIL_STORE_PROTOCOL:pop3}
