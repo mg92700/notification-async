@@ -1,5 +1,5 @@
 # Utilisez une image de base Java 21 basée sur Debian
-FROM openjdk:21-jdk
+FROM openjdk:22-jdk
 
 # Définir l'argument pour le fichier JAR
 ARG JAR_FILE=target/*.jar
